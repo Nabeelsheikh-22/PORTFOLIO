@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { MenuIcon } from "lucide-react";
 import { navLinks } from "@/data/content";
+import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
@@ -25,7 +26,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={buttonVariants({ variant: "ghost" })}>
+            <Link key={link.href} href={link.href} className={cn(buttonVariants({ variant: "ghost" }))}>
               {link.label}
             </Link>
           ))}
@@ -47,7 +48,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={buttonVariants({ variant: "ghost", className: "justify-start" })}
+                  className={cn(buttonVariants({ variant: "ghost", className: "justify-start" }))}
                 >
                   {link.label}
                 </Link>

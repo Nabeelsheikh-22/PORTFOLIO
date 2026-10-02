@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Hero() {
   return (
@@ -18,31 +18,17 @@ export default function Hero() {
           HTML, CSS, JavaScript, PHP, WordPress, Shopify and modern web technologies.
         </p>
         <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-          <Link href="#projects" className={buttonVariants({ size: "lg" })}>
+          <Link href="#projects" className={cn(buttonVariants({ size: "lg" }))}>
             View My Projects
             <ArrowRightIcon data-icon="inline-end" />
           </Link>
-          <Link href="#contact" className={buttonVariants({ variant: "outline", size: "lg" })}>
+          <Link href="#contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>
             Contact Me
           </Link>
         </div>
       </div>
 
-      <Card className="mx-auto w-full max-w-xs text-center">
-        <CardHeader className="items-center justify-items-center">
-          <Avatar className="mb-2 size-28">
-            <AvatarImage src="/avatar.jpeg" alt="Portrait of Nabeel Sheikh" className="object-cover" />
-            <AvatarFallback>NS</AvatarFallback>
-          </Avatar>
-          <CardTitle className="text-lg">Web Developer</CardTitle>
-          <CardDescription>WordPress | Shopify | Custom-Coded</CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-wrap justify-center gap-2">
-          <Badge variant="outline">WordPress</Badge>
-          <Badge variant="outline">Shopify</Badge>
-          <Badge variant="outline">SEO</Badge>
-        </CardContent>
-      </Card>
+      <ProfileCard className="mx-auto" />
     </section>
   );
 }

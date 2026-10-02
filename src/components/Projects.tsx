@@ -1,5 +1,6 @@
 import { ExternalLinkIcon } from "lucide-react";
 import { projects } from "@/data/content";
+import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -25,7 +26,7 @@ export default function Projects() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonVariants({ variant: "outline", size: "sm" })}
+                className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
               >
                 Live Demo
                 <ExternalLinkIcon data-icon="inline-end" />

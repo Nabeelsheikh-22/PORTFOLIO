@@ -1,23 +1,40 @@
+import { ExternalLinkIcon } from "lucide-react";
 import { projects } from "@/data/content";
-import styles from "./Projects.module.css";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Section from "@/components/Section";
 
 export default function Projects() {
   return (
-    <section id="projects">
-      <h2 className="sectionTitle">My Projects</h2>
-      <div className="grid">
+    <Section id="projects" title="My Projects" className="bg-muted/40">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {projects.map((project) => (
-          <div className="card" key={project.title}>
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <div className={styles.links}>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+          <Card key={project.title} className="transition-shadow hover:shadow-md">
+            <CardHeader>
+              <CardTitle>{project.title}</CardTitle>
+              <CardDescription>{project.description}</CardDescription>
+            </CardHeader>
+            <CardFooter className="mt-auto">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+              >
                 Live Demo
+                <ExternalLinkIcon data-icon="inline-end" />
               </a>
-            </div>
-          </div>
+            </CardFooter>
+          </Card>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

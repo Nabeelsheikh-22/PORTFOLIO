@@ -1,0 +1,11 @@
+.about {
+  background: white;
+}
+
+.about p {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+}

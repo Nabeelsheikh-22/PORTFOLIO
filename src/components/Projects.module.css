@@ -1,0 +1,12 @@
+.links {
+  margin-top: 15px;
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  color: var(--color-link);
+  font-weight: bold;
+  font-size: 14px;
+}
